@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Form from './forms'
 import './index.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
   function Square(props) {
     console.log(props.value);
@@ -13,7 +19,58 @@ import './index.css';
         </button>
       );
   }
-  
+  function Test() {
+    return (
+      <h2 className="test">Test</h2>
+    )
+  }
+
+
+  function Home() {
+    return (
+      <h2 className="test">Home</h2>
+    )
+  }
+
+  function Test2() {
+    return (
+      <h2>Test2</h2>
+    )
+  }
+
+  function Default() {
+    return (<Router>
+      <div>
+        
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/test">Test</Link>
+            </li>
+            <li>
+              <Link to="/test2">Test2</Link>
+            </li>
+          </ul>
+        
+
+        <Switch>
+          <Route path="/test">
+            <Test />
+          </Route>
+          <Route path="/test2">
+            <Test2 />
+          </Route>
+          <Route path="/">
+            <Form/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+  }
+
   class Board extends React.Component {
 
     constructor(props) {
@@ -95,7 +152,7 @@ import './index.css';
   // ========================================
   
   ReactDOM.render(
-    <Game />,
+    <Default />,
     document.getElementById('root')
   );
 

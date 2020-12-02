@@ -13,23 +13,27 @@ body {
     display: table;
   }
   
+.test {
+  font-size: large;
+}
+
   .status {
     margin-bottom: 10px;
   }
   
   .square {
-    background: #fff;
-    border: 1px solid #999;
+    background: rgb(63, 161, 185);
+    border: 1px solid rgb(19, 18, 18);
     float: left;
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
-    height: 34px;
+    height: 50px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 50px;
   }
   
   .square:focus {
